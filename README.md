@@ -1,46 +1,47 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Task Manager
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+- `npm start` - Runs the app in the development mode.
+- `npm test` - Launches the test runner in the interactive watch mode.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technical test
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Context: our back-end server team is building new microservices that will implement a task
+management system.
 
-### `npm test`
+Using React (and any other technology you deem necessary), create a front end (i.e. one or
+multiple pages) that uses the RESTful API described in the yaml file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The solution should provide a suitable foundation for other developers to enhance and
+improve upon in the near and distant future.
 
-### `npm run build`
+## Bonus points
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Demonstration of the following items could earn extra bonus points (optional):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Redux store
+- Linter
+- Pagination
+- Context API
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Notes
 
-### `npm run eject`
+The backend API may not be ready when the frontend task is implemented, mocked data
+could be used in this case.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It is left to the candidate to decide how to display the front end. OpenID authentication
+specification in the OpenAPI definition document is out of scope for the frontend task.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We suggest that you host your application in AWS or Azure and use GitHub for source
+control as you will be required to demonstrate your solution and talk through the code which
+you’ve implemented.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If you believe it is necessary you are invited to enhance your solution by implementing
+additional functionalities which you feel would be useful for a company such as Airbox
+Systems.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once you have completed this brief please notify either the recruiter or myself confirming the
+public IP address of your application.
