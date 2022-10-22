@@ -1,6 +1,7 @@
 {
   "name": "taskmanager",
   "version": "0.1.0",
+  "author": "Alex Lillo",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
