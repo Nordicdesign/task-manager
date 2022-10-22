@@ -12,15 +12,19 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    loggedIn: (state, action) => {
+    logIn: (state, action) => {
       state.isLoggedIn = true
       state.organisation = action.payload
+      window.localStorage.setItem('org', action.payload)
     },
-    logOut: () => initialState,
+    logOut: () => {
+      window.localStorage.clear()
+      return initialState
+    },
   },
 })
 
-export const { loggedIn, logOut } = authSlice.actions
+export const { logIn, logOut } = authSlice.actions
 
 // selectors
 export const isLoggedIn = (state: RootState) => state.auth.isLoggedIn

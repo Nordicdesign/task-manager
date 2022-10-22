@@ -7,7 +7,7 @@ import { ScreenRoutes } from '../../screenRoutes'
 export const Header = () => {
   const dispatch = useAppDispatch()
   const handleLogOut = () => {
-    dispatch(logOut)
+    dispatch(logOut())
   }
   return (
     <header>

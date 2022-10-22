@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppDispatch } from '../../app/hooks/hooks'
-import { loggedIn } from '../../features/auth/authSlice'
+import { logIn } from '../../features/auth/authSlice'
 import { ScreenRoutes } from '../../screenRoutes'
 
 export const Login = () => {
@@ -15,7 +15,7 @@ export const Login = () => {
       return
     }
     const organisation = org.current.value
-    dispatch(loggedIn(organisation))
+    dispatch(logIn(organisation))
     navigate(ScreenRoutes.DASHBOARD)
   }
   return (
