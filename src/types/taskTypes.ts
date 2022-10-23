@@ -6,9 +6,9 @@ enum PriorityEnum {
 
 export interface Task {
   id: string // added so json-server can do its magic
-  AbxTaskId: string // The Task Id used internally
+  abxTaskId: string // The Task Id used internally
   OrganisationTaskId: string // The Task Id used by the organisation
-  OrganisationId: string // The Organisation Id
+  organisationId: string // The Organisation Id
   priority: PriorityEnum // The priority given to the incident
   taskStatus: string
   assignedto: string // the vehicle id associated with the task

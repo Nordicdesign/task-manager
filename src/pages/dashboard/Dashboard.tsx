@@ -6,9 +6,8 @@ import { ListAllTasks } from '../../features/tasks'
 import { TaskDetails } from '../../features/tasks/TaskDetails'
 
 export const Dashboard = () => {
-  const organisation = useAppSelector(getOrganisation)
   const { taskId } = useParams()
-  console.log(taskId)
+  const organisation = useAppSelector(getOrganisation)
 
   return (
     <div className="page dashboard">

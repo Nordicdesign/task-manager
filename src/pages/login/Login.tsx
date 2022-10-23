@@ -31,6 +31,15 @@ export const Login = () => {
           </div>
         </form>
       </div>
+      <hr />
+      <p>
+        Enter one of the following organisations (case sensitive) to view their
+        tasks
+      </p>
+      <ul>
+        <li>Rebels</li>
+        <li>Empire</li>
+      </ul>
     </div>
   )
 }

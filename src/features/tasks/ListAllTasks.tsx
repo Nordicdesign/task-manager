@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Task } from '../../types/taskTypes'
-import { useGetTasksQuery } from '../api/apiSlice'
+import { useGetTasksByOrgQuery } from '../api/apiSlice'
 import { TaskItem } from './TaskItem'
 import styles from './ListAllTasks.module.scss'
 import { useNavigate } from 'react-router-dom'
+import { getOrganisation } from '../auth/authSlice'
+import { useAppSelector } from '../../app/hooks/hooks'
 
 export const ListAllTasks = () => {
-  const { data: tasks, isLoading, isError } = useGetTasksQuery()
+  const org = useAppSelector(getOrganisation)
+  const [page, setPage] = useState(1)
+  // const { data: tasks, isLoading, isError } = useGetTasksQuery()
+  const {
+    data: tasks,
+    isLoading,
+    isError,
+  } = useGetTasksByOrgQuery({ org, page })
   const navigate = useNavigate()
 
   const onTaskChange = (id: string) => navigate(`/${id}`)
@@ -31,11 +40,11 @@ export const ListAllTasks = () => {
             return (
               <li
                 key={id}
-                data-testid={`task-item-${task.AbxTaskId}`}
-                onClick={() => onTaskChange(task.AbxTaskId)}
+                data-testid={`task-item-${task.abxTaskId}`}
+                onClick={() => onTaskChange(task.abxTaskId)}
               >
                 <TaskItem
-                  AbxTaskId={task.AbxTaskId}
+                  AbxTaskId={task.abxTaskId}
                   tasksummary={task.tasksummary}
                   taskStatus={status}
                 />

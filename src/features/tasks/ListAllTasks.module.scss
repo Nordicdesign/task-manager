@@ -4,6 +4,7 @@
   ul {
     margin: 0;
     padding: 0;
+    border: 1px solid #333;
   }
   li {
     margin: 0;
@@ -11,9 +12,5 @@
     padding: $baseline;
     border-bottom: 1px solid #333;
     cursor: pointer;
-
-    &:first-of-type {
-      border-top: 1px solid #333;
-    }
   }
 }

@@ -4,6 +4,10 @@ import { Task } from '../../types/taskTypes'
 
 const config = env()
 
+interface GetPaginatedOrgTasks {
+  org: string | null
+  page: number
+}
 interface UpdateTask {
   id: string
   task: Task
@@ -22,6 +26,10 @@ export const apiSlice = createApi({
     // Tasks
     getTasks: builder.query<Task[], void>({
       query: () => '/tasks',
+      providesTags: [{ type: 'tasks', id: 'LIST' }],
+    }),
+    getTasksByOrg: builder.query<Task[], GetPaginatedOrgTasks>({
+      query: ({ org, page }) => `/tasks/organisations/${org}/page/${page}`,
       providesTags: [{ type: 'tasks', id: 'LIST' }],
     }),
     getTaskById: builder.query<Task, string | undefined>({
@@ -48,6 +56,7 @@ export const apiSlice = createApi({
 export const {
   useLoginQuery,
   useGetTasksQuery,
+  useGetTasksByOrgQuery,
   useGetTaskByIdQuery,
   useUpdateTaskMutation,
 } = apiSlice
