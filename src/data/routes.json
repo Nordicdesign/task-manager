@@ -1,0 +1,6 @@
+{
+  "/v1/tasks": "/tasks",
+  "/v1/tasks/organisations/:organisationId": "/tasks?organisationId=:organisationId",
+  "/v1/tasks/organisations/:organisationId/page/:page": "/tasks?organisationId=:organisationId&_page=:page",
+  "/v1/tasks/:abxTaskId": "/tasks/:abxTaskId"
+}
