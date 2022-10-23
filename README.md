@@ -9,7 +9,7 @@ In the project directory, you can run:
 - `npm run json` - Starts the json server. Required for the app to load.
 - `npm test` - Launches the test runner in the interactive watch mode.
 
-## Test notes
+## Test notes
 
 Decided to use _json-server_ as a quick way of having some working API that could look like what you defined on that swagger. It allows pagination and could expand to create tasks, just decided there was no need to demonstrate that part as I'm already reading and updating.
 
