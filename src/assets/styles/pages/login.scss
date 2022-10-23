@@ -1,0 +1,31 @@
+.page-login {
+  .login-card {
+    width: 96%;
+    margin: $baseline * 3 auto;
+    max-width: 400px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: $baseline * 3;
+
+    h1 {
+      margin: 0 0 $baseline;
+    }
+
+    form {
+      background-color: #333;
+      padding: $baseline;
+
+      label {
+        margin-bottom: $baseline * 0.25;
+      }
+
+      input {
+        width: 98%;
+        margin-bottom: $baseline;
+        line-height: 2;
+        padding: $baseline * 0.25;
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -19,16 +19,18 @@ export const Login = () => {
     navigate(ScreenRoutes.DASHBOARD)
   }
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLoginForm}>
-        <div>
-          <label htmlFor="organisation">Organisation</label>
-          <input type="text" ref={org} name="organisation" />
+    <div className="page page-login">
+      <div className="login-card">
+        <h1>Login</h1>
+        <form onSubmit={handleLoginForm}>
+          <div>
+            <label htmlFor="organisation">Organisation</label>
+            <input type="text" ref={org} name="organisation" />
 
-          <button type="submit">Log in</button>
-        </div>
-      </form>
+            <button type="submit">Log in</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
