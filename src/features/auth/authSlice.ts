@@ -28,5 +28,6 @@ export const { logIn, logOut } = authSlice.actions
 
 // selectors
 export const isLoggedIn = (state: RootState) => state.auth.isLoggedIn
+export const getOrganisation = (state: RootState) => state.auth.organisation
 
 export default authSlice.reducer

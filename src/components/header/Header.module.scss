@@ -1,0 +1,18 @@
+@import '../../assets/styles/theme';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: $baseline;
+  background-color: rgb(29, 29, 29);
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

@@ -11,6 +11,10 @@ export const ProtectedApp = () => {
       <Header />
       <Routes>
         <Route path={ScreenRoutes.DASHBOARD} element={<Dashboard />} />
+        <Route
+          path={`${ScreenRoutes.DASHBOARD}/:taskId`}
+          element={<Dashboard />}
+        />
       </Routes>
     </>
   )

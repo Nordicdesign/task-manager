@@ -1,11 +1,26 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { useAppSelector } from '../../app/hooks/hooks'
+import { getOrganisation } from '../../features/auth/authSlice'
 import { ListAllTasks } from '../../features/tasks'
+import { TaskDetails } from '../../features/tasks/TaskDetails'
 
 export const Dashboard = () => {
+  const organisation = useAppSelector(getOrganisation)
+  const { taskId } = useParams()
+  console.log(taskId)
+
   return (
-    <>
-      <h1>Dashbard</h1>
-      <ListAllTasks />
-    </>
+    <div className="page dashboard">
+      <header>
+        <h1>All tasks for organisation {organisation}</h1>
+      </header>
+      <aside>
+        <ListAllTasks />
+      </aside>
+      <main>
+        <TaskDetails taskId={taskId} />
+      </main>
+    </div>
   )
 }

@@ -1,0 +1,11 @@
+@import '../../assets/styles/theme';
+
+.taskItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  span {
+    margin-right: $baseline * 0.5;
+  }
+}

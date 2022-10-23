@@ -5,6 +5,7 @@ enum PriorityEnum {
 }
 
 export interface Task {
+  id: string // added so json-server can do its magic
   AbxTaskId: string // The Task Id used internally
   OrganisationTaskId: string // The Task Id used by the organisation
   OrganisationId: string // The Organisation Id
