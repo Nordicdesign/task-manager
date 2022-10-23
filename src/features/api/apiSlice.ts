@@ -4,6 +4,21 @@ import { Task } from '../../types/taskTypes'
 
 const config = env()
 
+// from https://joshgoestoflatiron.medium.com/february-10-pagination-in-a-json-server-api-with-the-link-header-dea63eb0a835
+function parseLinkHeader(linkHeader: any) {
+  if (!linkHeader) return
+
+  const linkHeadersArray = linkHeader
+    .split(', ')
+    .map((header: any) => header.split('; '))
+  const linkHeadersMap = linkHeadersArray.map((header: any) => {
+    const thisHeaderRel = header[1].replace(/"/g, '').replace('rel=', '')
+    const thisHeaderUrl = header[0].slice(1, -1)
+    return [thisHeaderRel, thisHeaderUrl]
+  })
+  return Object.fromEntries(linkHeadersMap)
+}
+
 interface GetPaginatedOrgTasks {
   org: string | null
   page: number
@@ -28,9 +43,17 @@ export const apiSlice = createApi({
       query: () => '/tasks',
       providesTags: [{ type: 'tasks', id: 'LIST' }],
     }),
-    getTasksByOrg: builder.query<Task[], GetPaginatedOrgTasks>({
+    getTasksByOrg: builder.query<any, GetPaginatedOrgTasks>({
       query: ({ org, page }) => `/tasks/organisations/${org}/page/${page}`,
       providesTags: [{ type: 'tasks', id: 'LIST' }],
+      transformResponse: (response: Task[], meta, arg) => {
+        const headers = meta?.response?.headers
+        const newResponse = {
+          data: response,
+          pagination: parseLinkHeader(headers?.get('Link')),
+        }
+        return newResponse
+      },
     }),
     getTaskById: builder.query<Task, string | undefined>({
       query: (taskId) => `/tasks/${taskId}`,
