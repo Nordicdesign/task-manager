@@ -6,6 +6,7 @@ import styles from './ListAllTasks.module.scss'
 import { useNavigate } from 'react-router-dom'
 import { getOrganisation } from '../auth/authSlice'
 import { useAppSelector } from '../../app/hooks/hooks'
+import { Pagination } from './Pagination'
 
 export const ListAllTasks = () => {
   const org = useAppSelector(getOrganisation)
@@ -70,10 +71,12 @@ export const ListAllTasks = () => {
               )
             })}
         </ul>
-        <div>
-          {previous && <button onClick={handlePrevious}>Previous</button>}
-          {next && <button onClick={handleNext}>Next</button>}
-        </div>
+        <Pagination
+          next={next}
+          previous={previous}
+          handleNext={handleNext}
+          handlePrevious={handlePrevious}
+        />
       </>
     )
   }
