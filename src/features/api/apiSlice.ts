@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { env } from '../../config/configuration'
+import { Task } from '../../types/taskTypes'
 
 const config = env()
 
@@ -12,7 +13,11 @@ export const apiSlice = createApi({
     login: builder.query({
       query: () => '/auth',
     }),
+    // Tasks
+    getTasks: builder.query<Task[], void>({
+      query: () => '/tasks',
+    }),
   }),
 })
 
-export const { useLoginQuery } = apiSlice
+export const { useLoginQuery, useGetTasksQuery } = apiSlice
